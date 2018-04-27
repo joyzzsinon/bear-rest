@@ -8,11 +8,11 @@ export function fetchBear(){
     }
   }
    
-  export function deleteBear(id) {
-        return (dispatch) => {
-            axios.delete(`http://localhost:8000/api/bears/${id}`)
+  export function createBear(bear) {
+       return (dispatch) => {
+            axios.post(`http://localhost:8000/api/bears`, bear)
             .then(() => {
                 dispatch(fetchBear())
             })
         }
-    } 
+    }
